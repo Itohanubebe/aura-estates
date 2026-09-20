@@ -56,10 +56,12 @@ export default function HomePage() {
         gsap.registerPlugin(ScrollTrigger);
         const context = gsap.context(() => {
           gsap.from(".hero-reveal", {
-            yPercent: 115,
+            y: 48,
+            opacity: 0,
             duration: 1.25,
             ease: "power4.out",
             stagger: 0.09,
+            clearProps: "transform,opacity",
           });
           gsap.from(".hero-media", { scale: 1.08, duration: 1.8, ease: "power3.out" });
 
@@ -156,7 +158,7 @@ export default function HomePage() {
             <p className="mb-4 overflow-hidden text-xs font-medium uppercase text-surface/75">
               <span className="hero-reveal block">Independent real estate developer</span>
             </p>
-            <h1 id="hero-title" className="max-w-[14ch] overflow-hidden font-display text-[clamp(4rem,11vw,10rem)] leading-[0.82]">
+            <h1 id="hero-title" className="max-w-[14ch] font-display text-[clamp(4rem,11vw,10rem)] leading-[0.82]">
               <span className="hero-reveal block">Architecture</span>
               <span className="hero-reveal block font-light italic">with presence.</span>
             </h1>
