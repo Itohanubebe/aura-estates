@@ -49,7 +49,7 @@ export default function HomePage() {
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    let cleanup = () => undefined;
+    let cleanup: () => void = () => undefined;
 
     void Promise.all([import("gsap"), import("gsap/ScrollTrigger")]).then(
       ([{ default: gsap }, { ScrollTrigger }]) => {
